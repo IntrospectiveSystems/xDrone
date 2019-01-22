@@ -1,0 +1,65 @@
+flash your os -  we use raspian-stretch-lite
+
+
+cd to boot directory
+touch ssh //to allow for ssh access
+
+
+//want to setup wifi?
+nano pwa_supplicant.conf;
+
+"
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+
+network={
+	ssid="networkName",
+	psk="networkPassword"
+}
+"
+
+
+plug in and boot up
+ssh into the pi you will need to find your pi's ip address 
+
+//one option or try (nmap ex. nmap -sn 192.168.1.0/24)
+ifconfig //to find broadcast channel
+ping #.#.#.# //ping broadcast channel
+arp -a //list all 
+
+
+//reset your root password default is raspberry
+passwd;
+
+
+//enable interfaces
+sudo raspi-config;
+//in Interfaces sub-option
+//i2c enable
+//serial disable login, enable hardware
+//camera ?
+
+
+//update local operating system
+sudo apt-get update;
+sudo apt-get dist-upgrade;
+
+
+//install node 10 (or whatever version)
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -;
+sudo apt-get install -y nodejs;
+
+
+//install pigpio c library allow for pwm access  ...
+sudo apt-get install pigpio;
+
+
+//of course install xgraph
+sudo npm install -g xgraph;
+
+
+//install git to get this repo
+sudo apt-get install git;
+
+
+//download git repo an xDrone directory will be created in the current directory 
+git clone https://github.com/IntrospectiveSystems/xDrone.git
