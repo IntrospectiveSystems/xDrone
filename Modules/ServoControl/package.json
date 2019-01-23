@@ -1,0 +1,6 @@
+{
+    "dependencies": {
+        "raspi-pwm":"6.0.0",
+        "raspi":"5.0.2"
+    }
+}

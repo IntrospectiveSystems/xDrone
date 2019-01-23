@@ -44,10 +44,18 @@ sudo apt-get update;
 sudo apt-get dist-upgrade;
 
 
-//install node 10 (or whatever version)
+//install node 10 (or whatever version) if this doesn't work see below
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -;
 sudo apt-get install -y nodejs;
 
+//node for ARMv6
+wget https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-armv6l.tar.xz
+tar xf node...
+//For bash, edit the startup file (~/.bashrc):
+"
+PATH=/usr/local/nodejs/bin:$PATH
+export PATH
+"
 
 //install pigpio c library allow for pwm access  ...
 sudo apt-get install pigpio;

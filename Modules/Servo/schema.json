@@ -1,0 +1,10 @@
+{
+	"Apex": {
+		"$Setup": "Setup",
+		"$Start": "Start",
+		"Entity": "Servo.js",
+		"MAX_PULSEWIDTH": 25000,
+		"MIN_PULSEWIDTH": 500,
+		"CENTER_PULSEWIDTH": 1500
+	}
+}

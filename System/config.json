@@ -1,0 +1,21 @@
+{
+    "Sources" :{
+        "local": "./../Modules"
+    },
+    "Modules": {
+        "Servo" :{
+            "Module": "Servo",
+            "Source": "local", 
+            "Par":{
+                "Pin": 2
+            }
+        },
+        "Controller": {
+            "Module":"ServoControl",
+            "Source": "local",
+            "Par": {
+                "Servo": "$Servo"
+            }
+        }
+    }
+}
